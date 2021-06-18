@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client Apps", "Client Apps", "{6F1D01C0-E770-46EC-A5F5-06BD9EB7B1EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker Host", "Docker Host", "{FE2838D5-79E1-45DF-94F5-EA3483A6702D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6A742187-F4DF-4030-BE72-9AADF87235F9}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A742187-F4DF-4030-BE72-9AADF87235F9} = {FE2838D5-79E1-45DF-94F5-EA3483A6702D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CDF3694-E01B-4B04-B12E-255A84086405}
+	EndGlobalSection
+EndGlobal
