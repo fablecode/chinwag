@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using Identity.DatabaseMigration;
 using Identity.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -68,8 +69,13 @@ namespace Identity.API
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            // Database Migrations
+            services.AddDatabaseMigrationServices(connectionString);
+
             // Infrastructure
-            services.AddInfrastructureServices(Configuration);
+            services.AddInfrastructureServices(connectionString);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

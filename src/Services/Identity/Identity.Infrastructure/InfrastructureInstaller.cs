@@ -1,23 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
-using IdentityServer4.EntityFramework.Extensions;
-using IdentityServer4.EntityFramework.Options;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Identity.Infrastructure
 {
     public static class InfrastructureInstaller
     {
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, string connectionString)
         {
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
@@ -61,11 +53,7 @@ namespace Identity.Infrastructure
                     // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
                     options.TokenCleanupInterval = 1300;
-
                 });
-
-            var dbContext = services.BuildServiceProvider().GetRequiredService<ApplicationDbContext>();
-            dbContext.Database.EnsureCreated();
 
             return services;
         }
@@ -76,44 +64,6 @@ namespace Identity.Infrastructure
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-        }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            ConfigurePersistentGrantDbContext(builder);
-            ConfigureConfigurationDbContext(builder);
-        }
-
-        private void ConfigurePersistentGrantDbContext(ModelBuilder builder)
-        {
-            var options = new OperationalStoreOptions();
-            //SetSchemaForAllTables(options, "isgrants");
-
-            builder.ConfigurePersistedGrantContext(options);
-        }
-
-        private void ConfigureConfigurationDbContext(ModelBuilder builder)
-        {
-            var options = new ConfigurationStoreOptions();
-            //SetSchemaForAllTables(options, "isconfig");
-
-            builder.ConfigureClientContext(options);
-            builder.ConfigureResourcesContext(options);
-        }
-
-        private void SetSchemaForAllTables<T>(T options, string schema)
-        {
-            var tableConfigurationType = typeof(TableConfiguration);
-            var schemaProperty = tableConfigurationType.GetProperty(nameof(TableConfiguration.Schema));
-
-            var tableConfigurations = options.GetType()
-                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(property => tableConfigurationType.IsAssignableFrom(property.PropertyType))
-                .Select(property => property.GetValue(options, null));
-
-            foreach (var table in tableConfigurations)
-                schemaProperty.SetValue(table, schema, null);
         }
     }
     public class ApplicationUser : IdentityUser

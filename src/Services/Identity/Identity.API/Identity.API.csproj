@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\Identity.DatabaseMigration\Identity.DatabaseMigration.csproj" />
   </ItemGroup>
 
 </Project>

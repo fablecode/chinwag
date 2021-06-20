@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Presentation", "5. Prese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Infrastructure", "Services\Identity\Identity.Infrastructure\Identity.Infrastructure.csproj", "{3E78194C-10FD-4553-968D-494B0F2805D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.DatabaseMigration", "Services\Identity\Infrastructure\Identity.DatabaseMigration\Identity.DatabaseMigration.csproj", "{3F25AB17-C3D9-487D-BF6E-029CECA00A90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3E78194C-10FD-4553-968D-494B0F2805D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E78194C-10FD-4553-968D-494B0F2805D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E78194C-10FD-4553-968D-494B0F2805D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F25AB17-C3D9-487D-BF6E-029CECA00A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F25AB17-C3D9-487D-BF6E-029CECA00A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F25AB17-C3D9-487D-BF6E-029CECA00A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F25AB17-C3D9-487D-BF6E-029CECA00A90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903} = {E2BBBB04-589A-4BD3-939D-69878FBDB075}
 		{89DE14DF-1782-4883-9BFC-2060F1803277} = {E2BBBB04-589A-4BD3-939D-69878FBDB075}
 		{3E78194C-10FD-4553-968D-494B0F2805D9} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
+		{3F25AB17-C3D9-487D-BF6E-029CECA00A90} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CDF3694-E01B-4B04-B12E-255A84086405}

@@ -11,11 +11,10 @@ services:
         
  identity-api-sqldata:
     image: mcr.microsoft.com/mssql/server:2019-latest
-    ports: 
-        - "1401:1433"
-    # command: --init-file /database/identity-api-init.sql
-    # volumes:
-    #     - ./init.sql:/database/identity-api-init.sql
+    container_name: identity-api-db
     environment:
         SA_PASSWORD: "Password0!"
-        ACCEPT_EULA: "Y"
+        ACCEPT_EULA: "Y"   
+    ports: 
+        - "1401:1433"
+
