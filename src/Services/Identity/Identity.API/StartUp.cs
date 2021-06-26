@@ -117,7 +117,6 @@ namespace Identity.API
 
             app.UseRouting();
             app.UseAuthorization();
-            app.UseAuthentication();
             app.UseHttpsRedirection();
 
             app.UseIdentityServer();

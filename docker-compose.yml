@@ -5,7 +5,7 @@ services:
  seq:
     image: datalust/seq:latest
     ports:
-        - 5341:80
+        - 1403:80
     environment:
         ACCEPT_EULA: "Y"
         
@@ -17,4 +17,12 @@ services:
         ACCEPT_EULA: "Y"   
     ports: 
         - "1401:1433"
+
+ identity-server:
+    container_name: identity-server
+    build: 
+        context: ./src/Services/Identity/IdentityServer/
+        dockerfile: ./Dockerfile
+    ports: 
+        - "1402:1402"
 

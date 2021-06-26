@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.DatabaseMigration", "Services\Identity\Infrastructure\Identity.DatabaseMigration\Identity.DatabaseMigration.csproj", "{47D294BB-8932-44B6-9346-54216424E92A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "Services\Identity\IdentityServer\IdentityServer.csproj", "{769FAFED-CA29-4640-804B-34381ACEE216}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C262993F-AF70-4FC6-85F7-D693A3562DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{47D294BB-8932-44B6-9346-54216424E92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D294BB-8932-44B6-9346-54216424E92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D294BB-8932-44B6-9346-54216424E92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769FAFED-CA29-4640-804B-34381ACEE216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769FAFED-CA29-4640-804B-34381ACEE216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769FAFED-CA29-4640-804B-34381ACEE216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769FAFED-CA29-4640-804B-34381ACEE216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,8 @@ Global
 		{89DE14DF-1782-4883-9BFC-2060F1803277} = {E2BBBB04-589A-4BD3-939D-69878FBDB075}
 		{653465C1-11C1-4676-A359-041C823F1FE0} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
 		{47D294BB-8932-44B6-9346-54216424E92A} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
+		{769FAFED-CA29-4640-804B-34381ACEE216} = {89DE14DF-1782-4883-9BFC-2060F1803277}
+		{C262993F-AF70-4FC6-85F7-D693A3562DCF} = {FE2838D5-79E1-45DF-94F5-EA3483A6702D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CDF3694-E01B-4B04-B12E-255A84086405}

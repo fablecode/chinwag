@@ -32,33 +32,37 @@ namespace Identity.API.Controllers
             _mapper = mapper;
             _userManager = userManager;
         }
+
+        /// <summary>
+        /// Register a new user
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns></returns>
         [HttpPost]
+        [AllowAnonymous]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
         public async Task<IActionResult> Register([FromBody] UserRegistrationModel userModel)
         {
             if (ModelState.IsValid)
             {
                 var newUser = _mapper.Map<ApplicationUser>(userModel);
 
-                var result = await _userManager.CreateAsync(newUser, userModel.Password);
+                var identityResult = await _userManager.CreateAsync(newUser, userModel.Password);
 
-                if (result.Succeeded)
+                if (identityResult.Succeeded)
                 {
-                    result = await _userManager.AddClaimsAsync(newUser, new[] { new Claim(JwtClaimTypes.Email, userModel.Email)});
+                    var addClaimsResult = await _userManager.AddClaimsAsync(newUser, new[] { new Claim(JwtClaimTypes.Email, userModel.Email)});
 
-                    if (result.Succeeded)
+                    if (addClaimsResult.Succeeded)
                     {
-                        //var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-                        //var confirmationLink = Url.Action(nameof(ConfirmEmail), "Accounts", new { token, email = newUser.Email }, Request.Scheme);
-
-                        //var message = new Message(new string[] { newUser.Email }, "Confirmation email link", confirmationLink, null);
-
-                        return Ok("The user has been registered successfully.");
+                        return StatusCode((int)HttpStatusCode.Created, "The user has been registered successfully.");
                     }
 
-                    throw new Exception(result.Errors.First().Description);
+                    return BadRequest(addClaimsResult.Errors.Descriptions());
                 }
 
-                return BadRequest(result.Errors.Descriptions());
+                return BadRequest(identityResult.Errors.Descriptions());
             }
 
             return BadRequest(ModelState.Errors());
