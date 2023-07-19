@@ -3,6 +3,7 @@ using Prism.Ioc;
 using System;
 using System.Windows;
 using chinwag.Views;
+using chinwag.Services;
 
 namespace chinwag
 {
@@ -13,7 +14,10 @@ namespace chinwag
     {
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //throw new NotImplementedException();
+            // Services
+            containerRegistry.RegisterSingleton<INavigationServiceEx, NavigationServiceEx>();
+
+
         }
 
         protected override Window CreateShell()

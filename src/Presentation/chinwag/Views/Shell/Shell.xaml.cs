@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using chinwag.ViewModels;
 using MahApps.Metro.Controls;
 
 namespace chinwag.Views
@@ -20,9 +21,11 @@ namespace chinwag.Views
     /// </summary>
     public partial class Shell : MetroWindow
     {
-        public Shell()
+        public Shell(ShellViewModel shellViewModel)
         {
             InitializeComponent();
+
+            DataContext = shellViewModel;
         }
     }
 }

@@ -11,9 +11,9 @@
                       WindowStyle="None"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
 
-    <controls:MetroWindow.DataContext>
+    <!--<controls:MetroWindow.DataContext>
         <vms:ShellViewModel/>
-    </controls:MetroWindow.DataContext>
+    </controls:MetroWindow.DataContext>-->
 
     <controls:MetroWindow.LeftWindowCommands>
         <controls:WindowCommands ShowSeparators="False">
@@ -95,7 +95,20 @@
                             IsPaneOpen="False"
                             ItemTemplate="{StaticResource MenuItemTemplate}"
                             ItemsSource="{Binding Menu}"
+                            ItemCommand="{Binding MenuItemInvokedCommand}"
+                            SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
                             OptionsItemTemplate="{StaticResource MenuItemTemplate}"
-                            OptionsItemsSource="{Binding OptionsMenu}" />
+                            OptionsItemsSource="{Binding OptionsMenu}" >
+        <!--  Header  -->
+        <controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+            <DataTemplate>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           Foreground="White"
+                           Text="{Binding ElementName=HamburgerMenuControl, Path=SelectedItem.Label}" />
+            </DataTemplate>
+        </controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+    </controls:HamburgerMenu>
 
 </controls:MetroWindow>
