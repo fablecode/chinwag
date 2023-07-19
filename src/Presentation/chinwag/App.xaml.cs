@@ -18,7 +18,7 @@ namespace chinwag
 
         protected override Window CreateShell()
         {
-            return Container.Resolve<ShellWindow>();
+            return Container.Resolve<Shell>();
         }
     }
 }
