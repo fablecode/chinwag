@@ -16,10 +16,10 @@
     </controls:MetroWindow.DataContext>-->
 
     <controls:MetroWindow.LeftWindowCommands>
-        <controls:WindowCommands ShowSeparators="False">
+        <controls:WindowCommands ShowSeparators="False" Visibility="{Binding IsBackButtonVisible, Mode=OneWay, ConverterParameter=Reverse, Converter={StaticResource BoolToVisibility}}">
             <Button x:Name="GoBackButton"
                     Width="{Binding ElementName=HamburgerMenuControl, Path=CompactPaneLength}"
-                    AutomationProperties.Name="Go back"                    >
+                    AutomationProperties.Name="Go back">
                 <controls:FontIcon AutomationProperties.Name="Go back icon"
                                    FontSize="14"
                                    Glyph="&#xE72B;" />

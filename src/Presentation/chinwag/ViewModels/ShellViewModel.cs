@@ -22,10 +22,20 @@ public class ShellViewModel : BindableBase
     private static readonly ObservableCollection<MenuItem> AppOptionsMenu = new ObservableCollection<MenuItem>();
     private string _hamburgerTitle;
     private MenuItem _selectedMenuItem;
+    private bool _isBackButtonVisible;
 
     public ObservableCollection<MenuItem> Menu => AppMenu;
 
     public ObservableCollection<MenuItem> OptionsMenu => AppOptionsMenu;
+
+    public bool CanGoBack => _navigationServiceEx.CanGoBack;
+
+    public bool IsBackButtonVisible
+    {
+        get => _isBackButtonVisible;
+        set => SetProperty(ref _isBackButtonVisible, value);
+    }
+
 
     // Commands
     public DelegateCommand MenuItemInvokedCommand { get; private set; }
@@ -62,7 +72,7 @@ public class ShellViewModel : BindableBase
             Icon = new PackIconBootstrapIcons() { Kind = PackIconBootstrapIconsKind.Stack},
             Label = "Decks",
             NavigationType = typeof(Decks),
-            NavigationDestination = new Uri("Views/Decks.xaml", UriKind.RelativeOrAbsolute)
+            NavigationDestination = new Uri("Views/Decks/Decks.xaml", UriKind.RelativeOrAbsolute)
         });
 
         Menu.Add(new MenuItem()
@@ -95,5 +105,7 @@ public class ShellViewModel : BindableBase
     private void MenuItemInvoked()
     {
         _navigationServiceEx.Navigate(SelectedMenuItem.NavigationDestination);
+
+        IsBackButtonVisible = _navigationServiceEx.CanGoBack;
     }
 }
