@@ -36,7 +36,13 @@ public class NavigationServiceEx : INavigationServiceEx
 
     public bool CanGoForward => this.Frame.CanGoForward;
 
-    public void GoBack() => this.Frame.GoBack();
+    public void GoBack()
+    {
+        if(CanGoBack)
+        {
+            Frame.GoBack();
+        }
+    }
 
     public void GoForward() => this.Frame.GoForward();
 

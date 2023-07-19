@@ -9,7 +9,8 @@
                       Title="Chinwag"
                       WindowState="Maximized"
                       WindowStyle="None"
-                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:prism="http://prismlibrary.com/">
 
     <!--<controls:MetroWindow.DataContext>
         <vms:ShellViewModel/>
@@ -19,7 +20,8 @@
         <controls:WindowCommands ShowSeparators="False" Visibility="{Binding IsBackButtonVisible, Mode=OneWay, ConverterParameter=Reverse, Converter={StaticResource BoolToVisibility}}">
             <Button x:Name="GoBackButton"
                     Width="{Binding ElementName=HamburgerMenuControl, Path=CompactPaneLength}"
-                    AutomationProperties.Name="Go back">
+                    AutomationProperties.Name="Go back"
+                    Command="{Binding GoBackCommand}">
                 <controls:FontIcon AutomationProperties.Name="Go back icon"
                                    FontSize="14"
                                    Glyph="&#xE72B;" />
@@ -90,25 +92,27 @@
 
     </controls:MetroWindow.Resources>
 
-    <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                            DisplayMode="CompactInline"
-                            IsPaneOpen="False"
-                            ItemTemplate="{StaticResource MenuItemTemplate}"
-                            ItemsSource="{Binding Menu}"
-                            ItemCommand="{Binding MenuItemInvokedCommand}"
-                            SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
-                            OptionsItemTemplate="{StaticResource MenuItemTemplate}"
-                            OptionsItemsSource="{Binding OptionsMenu}" >
-        <!--  Header  -->
-        <controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
-            <DataTemplate>
-                <TextBlock HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="16"
-                           Foreground="White"
-                           Text="{Binding ElementName=HamburgerMenuControl, Path=SelectedItem.Label}" />
-            </DataTemplate>
-        </controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
-    </controls:HamburgerMenu>
-
+    <Grid>
+        <controls:HamburgerMenu x:Name="HamburgerMenuControl"
+                                DisplayMode="CompactInline"
+                                IsPaneOpen="False"
+                                ItemTemplate="{StaticResource MenuItemTemplate}"
+                                ItemsSource="{Binding Menu}"
+                                ItemCommand="{Binding MenuItemInvokedCommand}"
+                                SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
+                                OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                                OptionsItemsSource="{Binding OptionsMenu}"
+                                Content="{Binding HamburgerMenuContent}">
+            <!--  Header  -->
+            <controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+                <DataTemplate>
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Foreground="White"
+                               Text="{Binding ElementName=HamburgerMenuControl, Path=SelectedItem.Label}" />
+                </DataTemplate>
+            </controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+        </controls:HamburgerMenu>
+    </Grid>
 </controls:MetroWindow>

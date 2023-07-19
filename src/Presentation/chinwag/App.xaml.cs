@@ -16,8 +16,6 @@ namespace chinwag
         {
             // Services
             containerRegistry.RegisterSingleton<INavigationServiceEx, NavigationServiceEx>();
-
-
         }
 
         protected override Window CreateShell()
