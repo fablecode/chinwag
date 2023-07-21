@@ -1,11 +1,9 @@
 ﻿using Prism.DryIoc;
 using Prism.Ioc;
-using System;
 using System.Windows;
-using chinwag.Views;
-using chinwag.Services;
+using Chinwag.Views;
 
-namespace chinwag
+namespace Chinwag
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -14,13 +12,12 @@ namespace chinwag
     {
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Services
-            containerRegistry.RegisterSingleton<INavigationServiceEx, NavigationServiceEx>();
+            
         }
 
         protected override Window CreateShell()
         {
-            return Container.Resolve<Shell>();
+            return Container.Resolve<MainWindow>();
         }
     }
 }

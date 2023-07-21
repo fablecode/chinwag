@@ -1,7 +1,7 @@
-﻿<prism:PrismApplication x:Class="chinwag.App"
+﻿<prism:PrismApplication x:Class="Chinwag.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:chinwag"
+             xmlns:local="clr-namespace:Chinwag"
              xmlns:prism="http://prismlibrary.com/">
     <Application.Resources>
         <ResourceDictionary>
