@@ -16,4 +16,11 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Chinwag.Presentation.Core\Chinwag.Presentation.Core.csproj" />
+    <ProjectReference Include="..\Modules\Chinwag.Modules.Decks\Chinwag.Modules.Decks.csproj" />
+    <ProjectReference Include="..\Modules\Chinwag.Modules.Home\Chinwag.Modules.Home.csproj" />
+    <ProjectReference Include="..\Modules\Chinwag.Modules.Navigation\Chinwag.Modules.Navigation.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,16 +1,29 @@
-﻿<controls:MetroWindow x:Class="Chinwag.Views.MainWindow"
-                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:Chinwag"
-                      mc:Ignorable="d"
-                      WindowState="Maximized"
-                      WindowStyle="None"
-                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:prism="http://prismlibrary.com/"
-                      prism:ViewModelLocator.AutoWireViewModel="True"
-                      Title="{Binding Title}" Height="450" Width="800" >
+﻿<mah:MetroWindow x:Class="Chinwag.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:Chinwag"
+                 mc:Ignorable="d"
+                 WindowState="Maximized"
+                 WindowStyle="None"
+                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:prism="http://prismlibrary.com/"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 prism:ViewModelLocator.AutoWireViewModel="True"
+                 Title="{Binding Title}" Height="450" Width="800"
+                 WindowStartupLocation="CenterScreen">
+    <mah:MetroWindow.LeftWindowCommands>
+
+        <mah:WindowCommands ShowSeparators="True">
+            <Button ToolTip="Home">
+                <iconPacks:PackIconSimpleIcons Width="22" Height="22" Kind="BookStack" Margin="3, 0"/>
+            </Button>
+        </mah:WindowCommands>
+
+    </mah:MetroWindow.LeftWindowCommands>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -22,4 +35,4 @@
         <ContentControl Grid.Column="0" prism:RegionManager.RegionName="NavigationRegion"/>
         <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion"/>
     </Grid>
-</controls:MetroWindow>
+</mah:MetroWindow>
