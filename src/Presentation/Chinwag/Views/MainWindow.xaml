@@ -23,16 +23,24 @@
         </mah:WindowCommands>
 
     </mah:MetroWindow.LeftWindowCommands>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="28px" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="NavigationRegion"/>
-        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Column="0" prism:RegionManager.RegionName="NavigationRegion"/>
+            <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion"/>
+        </Grid>
+        <StatusBar Grid.Row="1">
+            <StatusBarItem FontSize="16">Remaining Monthly Budget</StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="$1600" FontSize="16"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </mah:MetroWindow>
