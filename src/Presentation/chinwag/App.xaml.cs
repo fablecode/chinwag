@@ -1,6 +1,7 @@
 ﻿using Prism.DryIoc;
 using Prism.Ioc;
 using System.Windows;
+using Chinwag.Modules.Cards;
 using Chinwag.Modules.Decks;
 using Chinwag.Modules.Home;
 using Chinwag.Modules.Navigation;
@@ -31,6 +32,7 @@ namespace Chinwag
             moduleCatalog.AddModule<NavigationModule>();
             moduleCatalog.AddModule<HomeModule>();
             moduleCatalog.AddModule<DecksModule>();
+            moduleCatalog.AddModule<CardsModule>();
         }
     }
 }

@@ -7,6 +7,7 @@ using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Controls;
 
 namespace Chinwag.Modules.Navigation.ViewModels;
 
@@ -60,7 +61,7 @@ public class NavigationControlViewModel : BindableBase
 
         Menu.Add(new NavigationItem()
         {
-            Icon = new PackIconBootstrapIcons() { Kind = PackIconBootstrapIconsKind.Stack },
+            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cards },
             Label = "Decks",
             NavigationPath = NavigationPaths.DecksPath
         });
@@ -69,14 +70,7 @@ public class NavigationControlViewModel : BindableBase
         {
             Icon = new PackIconUnicons() { Kind = PackIconUniconsKind.FileBlockAlt },
             Label = "Banlists",
-            NavigationPath = NavigationPaths.BanlistsPath
-        });
-
-        Menu.Add(new NavigationItem()
-        {
-            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cards },
-            Label = "Cards",
-            NavigationPath = NavigationPaths.CardsPath
+            NavigationPath = NavigationPaths.BanlistsPath,
         });
 
         Menu.Add(new NavigationItem()
@@ -84,6 +78,13 @@ public class NavigationControlViewModel : BindableBase
             Icon = new PackIconCodicons() { Kind = PackIconCodiconsKind.Tag },
             Label = "Archetypes",
             NavigationPath = NavigationPaths.ArchetypesPath
+        });
+
+        Menu.Add(new NavigationItem()
+        {
+            Icon = new PackIconBootstrapIcons() { Kind = PackIconBootstrapIconsKind.Stack },
+            Label = "Cards",
+            NavigationPath = NavigationPaths.CardsPath
         });
 
         SelectedMenuItem = Menu.First();

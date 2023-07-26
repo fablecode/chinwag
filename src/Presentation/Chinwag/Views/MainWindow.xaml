@@ -13,6 +13,7 @@
                  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                  prism:ViewModelLocator.AutoWireViewModel="True"
                  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:constants="clr-namespace:Chinwag.Presentation.Core.Constants;assembly=Chinwag.Presentation.Core"
                  Title="{Binding Title}" Height="450" Width="800"
                  WindowStartupLocation="CenterScreen">
     <mah:MetroWindow.LeftWindowCommands>
@@ -30,8 +31,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid>
-            <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="55,0,0,0"/>
-            <ContentControl prism:RegionManager.RegionName="NavigationRegion" />
+            <ContentControl prism:RegionManager.RegionName="{Binding Source={x:Static constants:RegionNames.ContentRegion}}" Margin="55,0,0,0"/>
+            <ContentControl prism:RegionManager.RegionName="{Binding Source={x:Static constants:RegionNames.NavigationRegion}}" />
         </Grid>
     </Grid>
 </mah:MetroWindow>

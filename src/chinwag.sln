@@ -15,15 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Presentation", "5. Prese
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{02702FE9-7104-4BAA-9EFA-29970968FAEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag", "Presentation\Chinwag\Chinwag.csproj", "{20EA9DC6-A51A-4E83-B852-6012EB4655B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag", "Presentation\Chinwag\Chinwag.csproj", "{20EA9DC6-A51A-4E83-B852-6012EB4655B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Modules.Home", "Presentation\Modules\Chinwag.Modules.Home\Chinwag.Modules.Home.csproj", "{BFCE7C4A-2402-4F6B-87A7-CED7EE95007B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Home", "Presentation\Modules\Chinwag.Modules.Home\Chinwag.Modules.Home.csproj", "{BFCE7C4A-2402-4F6B-87A7-CED7EE95007B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Modules.Navigation", "Presentation\Modules\Chinwag.Modules.Navigation\Chinwag.Modules.Navigation.csproj", "{33F6E83C-EFDD-4481-B40D-B00C035030D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Navigation", "Presentation\Modules\Chinwag.Modules.Navigation\Chinwag.Modules.Navigation.csproj", "{33F6E83C-EFDD-4481-B40D-B00C035030D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Presentation.Core", "Presentation\Chinwag.Presentation.Core\Chinwag.Presentation.Core.csproj", "{0D73D3B7-3A54-4CE5-936B-4C22BFF7A6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Presentation.Core", "Presentation\Chinwag.Presentation.Core\Chinwag.Presentation.Core.csproj", "{0D73D3B7-3A54-4CE5-936B-4C22BFF7A6FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Modules.Decks", "Presentation\Modules\Chinwag.Modules.Decks\Chinwag.Modules.Decks.csproj", "{D3076B0E-C50C-432D-990F-A09C8B4FDB26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Decks", "Presentation\Modules\Chinwag.Modules.Decks\Chinwag.Modules.Decks.csproj", "{D3076B0E-C50C-432D-990F-A09C8B4FDB26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Modules.Cards", "Presentation\Modules\Chinwag.Modules.Cards\Chinwag.Modules.Cards.csproj", "{59F9CD93-5635-4CB6-8C5B-24FB346C4626}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D3076B0E-C50C-432D-990F-A09C8B4FDB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3076B0E-C50C-432D-990F-A09C8B4FDB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3076B0E-C50C-432D-990F-A09C8B4FDB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F9CD93-5635-4CB6-8C5B-24FB346C4626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F9CD93-5635-4CB6-8C5B-24FB346C4626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F9CD93-5635-4CB6-8C5B-24FB346C4626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F9CD93-5635-4CB6-8C5B-24FB346C4626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{33F6E83C-EFDD-4481-B40D-B00C035030D6} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
 		{0D73D3B7-3A54-4CE5-936B-4C22BFF7A6FC} = {89DE14DF-1782-4883-9BFC-2060F1803277}
 		{D3076B0E-C50C-432D-990F-A09C8B4FDB26} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
+		{59F9CD93-5635-4CB6-8C5B-24FB346C4626} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CDF3694-E01B-4B04-B12E-255A84086405}
