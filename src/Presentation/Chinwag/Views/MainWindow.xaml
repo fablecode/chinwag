@@ -12,35 +12,26 @@
                  xmlns:prism="http://prismlibrary.com/"
                  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                  prism:ViewModelLocator.AutoWireViewModel="True"
+                 xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                  Title="{Binding Title}" Height="450" Width="800"
                  WindowStartupLocation="CenterScreen">
     <mah:MetroWindow.LeftWindowCommands>
 
         <mah:WindowCommands ShowSeparators="True">
             <Button ToolTip="Home">
-                <iconPacks:PackIconSimpleIcons Width="22" Height="22" Kind="BookStack" Margin="3, 0"/>
+                <iconPacks:PackIconSimpleIcons Width="22" Height="22" Kind="BookStack" Margin="3.5, 0"/>
             </Button>
         </mah:WindowCommands>
 
     </mah:MetroWindow.LeftWindowCommands>
+            
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="28px" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ContentControl Grid.Column="0" prism:RegionManager.RegionName="NavigationRegion"/>
-            <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion"/>
+        <Grid>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="55,0,0,0"/>
+            <ContentControl prism:RegionManager.RegionName="NavigationRegion" />
         </Grid>
-        <StatusBar Grid.Row="1">
-            <StatusBarItem FontSize="16">Remaining Monthly Budget</StatusBarItem>
-            <StatusBarItem>
-                <TextBlock Text="$1600" FontSize="16"/>
-            </StatusBarItem>
-        </StatusBar>
     </Grid>
 </mah:MetroWindow>

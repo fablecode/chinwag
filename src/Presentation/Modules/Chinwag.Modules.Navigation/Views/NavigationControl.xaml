@@ -33,8 +33,8 @@
     </UserControl.Resources>
 
     <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                            DisplayMode="CompactInline"
-                            IsPaneOpen="False"
+                            DisplayMode="CompactOverlay"
+                            IsPaneOpen="{Binding IsMenuOpen, Mode=TwoWay}"
                             ItemTemplate="{StaticResource MenuItemTemplate}"
                             ItemsSource="{Binding Menu}"
                             SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
@@ -57,7 +57,7 @@
                 <prism:InvokeCommandAction Command="{Binding MenuItemInvokedCommand}" />
             </i:EventTrigger>
         </i:Interaction.Triggers>
-
+        
     </controls:HamburgerMenu>
 
 </UserControl>

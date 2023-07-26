@@ -31,10 +31,18 @@ public class NavigationControlViewModel : BindableBase
     }
 
     private NavigationItem? _selectedMenuItem;
+
     public NavigationItem? SelectedMenuItem
     {
         get => _selectedMenuItem;
         set => SetProperty(ref _selectedMenuItem, value);
+    }
+
+    private bool _isMenuOpen;
+    public bool IsMenuOpen
+    {
+        get => _isMenuOpen;
+        set => SetProperty(ref _isMenuOpen, value);
     }
 
     public NavigationControlViewModel(IApplicationCommands applicationCommands)
