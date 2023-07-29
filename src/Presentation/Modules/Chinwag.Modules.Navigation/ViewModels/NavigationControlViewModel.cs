@@ -5,7 +5,9 @@ using MahApps.Metro.Controls;
 using MahApps.Metro.IconPacks;
 using Prism.Commands;
 using Prism.Mvvm;
+using System;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Linq;
 using System.Windows.Controls;
 
@@ -61,7 +63,8 @@ public class NavigationControlViewModel : BindableBase
 
         Menu.Add(new NavigationItem()
         {
-            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cards },
+            Icon = new PackIconSimpleIcons() { Kind = PackIconSimpleIconsKind.BookStack },
+            //Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cards },
             Label = "Decks",
             NavigationPath = NavigationPaths.DecksPath
         });
@@ -80,12 +83,36 @@ public class NavigationControlViewModel : BindableBase
             NavigationPath = NavigationPaths.ArchetypesPath
         });
 
-        Menu.Add(new NavigationItem()
+        //Menu.Add(new NavigationItem()
+        //{
+        //    Icon = new PackIconBootstrapIcons() { Kind = PackIconBootstrapIconsKind.Stack },
+        //    Label = "Cards",
+        //    NavigationPath = NavigationPaths.CardsPath
+        //});
+
+
+        OptionsMenu.Add(new NavigationItem()
         {
-            Icon = new PackIconBootstrapIcons() { Kind = PackIconBootstrapIconsKind.Stack },
+            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.CardsPlayingOutline },
             Label = "Cards",
             NavigationPath = NavigationPaths.CardsPath
         });
+
+        //OptionsMenu.Add(new MenuItem()
+        //{
+        //    Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InfoCircleSolid },
+        //    Label = "About",
+        //    NavigationType = typeof(AboutPage),
+        //    NavigationDestination = new Uri("Views/AboutPage.xaml", UriKind.RelativeOrAbsolute)
+        //});
+
+        OptionsMenu.Add(new NavigationItem()
+        {
+            Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CogsSolid },
+            Label = "Settings",
+            NavigationPath = NavigationPaths.CardsPath
+        });
+
 
         SelectedMenuItem = Menu.First();
     }

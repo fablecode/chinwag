@@ -20,7 +20,7 @@
 
         <mah:WindowCommands ShowSeparators="True">
             <Button ToolTip="Home">
-                <iconPacks:PackIconSimpleIcons Width="22" Height="22" Kind="BookStack" Margin="3.5, 0"/>
+                <iconPacks:PackIconMaterial Width="22" Height="22" Kind="Cards" Margin="3.5, 0"/>
             </Button>
         </mah:WindowCommands>
 
@@ -31,7 +31,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid>
-            <ContentControl prism:RegionManager.RegionName="{Binding Source={x:Static constants:RegionNames.ContentRegion}}" Margin="55,0,0,0"/>
+            <ContentControl prism:RegionManager.RegionName="{Binding Source={x:Static constants:RegionNames.ContentRegion}}" Margin="55,10,10,10"/>
             <ContentControl prism:RegionManager.RegionName="{Binding Source={x:Static constants:RegionNames.NavigationRegion}}" />
         </Grid>
     </Grid>
