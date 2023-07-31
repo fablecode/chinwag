@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,54 @@ namespace Chinwag.Modules.Cards.Views
     /// </summary>
     public partial class CardsControl : UserControl
     {
+        public ObservableCollection<string> ImagePaths => new ObservableCollection<string>
+        {
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+            "/Chinwag.Modules.Cards;component/Views/defaut-card.png",
+        };
+
         public CardsControl()
         {
             InitializeComponent();
+            this.DataContext = ImagePaths;
         }
     }
 }
