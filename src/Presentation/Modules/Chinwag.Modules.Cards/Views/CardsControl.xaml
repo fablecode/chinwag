@@ -188,7 +188,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Margin="5,0,0,0" Padding="0,0,0,0" BorderThickness="2" BorderBrush="#FF5980F1" Background="#FF5980F1">
-                    <WrapPanel  >
+                    <WrapPanel>
                         <Label Foreground="White">Results:</Label>
                         <Label Foreground="White">8090</Label>
                     </WrapPanel>
@@ -228,7 +228,7 @@
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <UniformGrid IsItemsHost="True"
-                                                 Columns="10"
+                                                 Columns="7"
                                                  VirtualizingPanel.IsVirtualizing="True" 
                                                  VirtualizingPanel.VirtualizationMode="Recycling" 
                                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True" />
@@ -366,13 +366,13 @@
                    RenderOptions.BitmapScalingMode="Fant"/>
             <TabControl Grid.Row="1" HorizontalAlignment="Center">
                 <TabItem Header="Card">
-                    <Label Content="Content goes here..." />
+                    <Label Content="Card Text goes here..." />
                 </TabItem>
                 <TabItem Header="Tips">
-                    <Label Content="Content goes here..." />
+                    <Label Content="Card Tips goes here..." />
                 </TabItem>
                 <TabItem Header="Rulings">
-                    <Label Content="Content goes here..." />
+                    <Label Content="Card Rulings goes here..." />
                 </TabItem>
             </TabControl>
         </Grid>
