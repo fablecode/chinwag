@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
   </ItemGroup>
 
@@ -19,9 +25,16 @@
   <ItemGroup>
     <ProjectReference Include="..\Chinwag.Presentation.Core\Chinwag.Presentation.Core.csproj" />
     <ProjectReference Include="..\Modules\Chinwag.Modules.Cards\Chinwag.Modules.Cards.csproj" />
+    <ProjectReference Include="..\Modules\Chinwag.Modules.Dashboard\Chinwag.Modules.Dashboard.csproj" />
     <ProjectReference Include="..\Modules\Chinwag.Modules.Decks\Chinwag.Modules.Decks.csproj" />
     <ProjectReference Include="..\Modules\Chinwag.Modules.Home\Chinwag.Modules.Home.csproj" />
     <ProjectReference Include="..\Modules\Chinwag.Modules.Navigation\Chinwag.Modules.Navigation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

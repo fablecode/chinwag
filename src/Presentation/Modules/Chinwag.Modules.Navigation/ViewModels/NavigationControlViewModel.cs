@@ -90,13 +90,20 @@ public class NavigationControlViewModel : BindableBase
         //    NavigationPath = NavigationPaths.CardsPath
         //});
 
-
         OptionsMenu.Add(new NavigationItem()
         {
-            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.CardsPlayingOutline },
-            Label = "Cards",
-            NavigationPath = NavigationPaths.CardsPath
+            Icon = new PackIconOcticons() { Kind = PackIconOcticonsKind.Dashboard},
+            Label = "Dashboard",
+            NavigationPath = NavigationPaths.DashboardPath
         });
+
+
+        //OptionsMenu.Add(new NavigationItem()
+        //{
+        //    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.CardsPlayingOutline },
+        //    Label = "Cards",
+        //    NavigationPath = NavigationPaths.CardsPath
+        //});
 
         //OptionsMenu.Add(new MenuItem()
         //{

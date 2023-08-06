@@ -7,4 +7,5 @@ public class NavigationPaths
     public const string BanlistsPath = "BanlistsControl";
     public const string CardsPath = "CardsControl";
     public const string ArchetypesPath = "ArchetypesControl";
+    public const string DashboardPath = "DashboardControl";
 }

@@ -87,7 +87,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.22*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <!--// Card Search //-->
