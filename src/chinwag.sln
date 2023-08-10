@@ -27,7 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Decks", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Cards", "Presentation\Modules\Chinwag.Modules.Cards\Chinwag.Modules.Cards.csproj", "{59F9CD93-5635-4CB6-8C5B-24FB346C4626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Modules.Dashboard", "Presentation\Modules\Chinwag.Modules.Dashboard\Chinwag.Modules.Dashboard.csproj", "{276B10E7-7613-49CE-A147-A189E19F2983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Modules.Dashboard", "Presentation\Modules\Chinwag.Modules.Dashboard\Chinwag.Modules.Dashboard.csproj", "{276B10E7-7613-49CE-A147-A189E19F2983}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Infrastructure", "Infrastructure\Chinwag.Infrastructure\Chinwag.Infrastructure.csproj", "{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.DatabaseMigration", "Infrastructure\Chinwag.DatabaseMigration\Chinwag.DatabaseMigration.csproj", "{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chinwag.Application", "Application\Chinwag.Application\Chinwag.Application.csproj", "{79FD48D4-349B-4C65-A8A5-34E460105526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinwag.Domain", "Domain\Chinwag.Domain\Chinwag.Domain.csproj", "{45B4ADD0-DBF7-4263-BD33-0072D4D1D108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,22 @@ Global
 		{276B10E7-7613-49CE-A147-A189E19F2983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{276B10E7-7613-49CE-A147-A189E19F2983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{276B10E7-7613-49CE-A147-A189E19F2983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FD48D4-349B-4C65-A8A5-34E460105526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FD48D4-349B-4C65-A8A5-34E460105526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FD48D4-349B-4C65-A8A5-34E460105526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FD48D4-349B-4C65-A8A5-34E460105526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B4ADD0-DBF7-4263-BD33-0072D4D1D108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B4ADD0-DBF7-4263-BD33-0072D4D1D108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B4ADD0-DBF7-4263-BD33-0072D4D1D108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B4ADD0-DBF7-4263-BD33-0072D4D1D108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +100,10 @@ Global
 		{D3076B0E-C50C-432D-990F-A09C8B4FDB26} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
 		{59F9CD93-5635-4CB6-8C5B-24FB346C4626} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
 		{276B10E7-7613-49CE-A147-A189E19F2983} = {02702FE9-7104-4BAA-9EFA-29970968FAEA}
+		{BCDE59B1-BC81-4937-A8B8-44AE56E61A3B} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
+		{D8A0A505-C814-4CEE-A0FE-3C2003A39EA1} = {1036C4D1-AA8A-4E1E-9E9B-D2C3C6530903}
+		{79FD48D4-349B-4C65-A8A5-34E460105526} = {B34B8A0A-38FA-4712-B424-E4F88CBA0FFE}
+		{45B4ADD0-DBF7-4263-BD33-0072D4D1D108} = {852894C7-12FD-4EA1-A544-1A6AF2EB5827}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CDF3694-E01B-4B04-B12E-255A84086405}

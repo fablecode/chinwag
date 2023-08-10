@@ -1,9 +1,10 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using Chinwag.Presentation.Core.Constants;
+﻿using Chinwag.Presentation.Core.Constants;
 using Chinwag.Presentation.Core.Interfaces;
+using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Regions;
+using System;
+using Microsoft.Extensions.Logging;
 
 namespace Chinwag.ViewModels;
 
