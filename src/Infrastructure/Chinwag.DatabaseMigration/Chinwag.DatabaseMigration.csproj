@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+    <Folder Include="Scripts\PreDeployment\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-sqlserver" Version="5.0.8" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="Serilog" Version="3.0.1" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Scripts\PreDeployment\**\*.sql" />
+		<EmbeddedResource Include="Scripts\Migrations\**\*.sql" />
+		<EmbeddedResource Include="Scripts\PostDeployment\**\*.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0002 - Add_Table_SubCategory.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0003 - Add_Table_Attribute.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0004 - Add_Table_Type.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0005 - Add_Table_LinkArrow.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0006 - Add_Table_Format.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0007 - Add_Table_Limit.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0008 - Add_Table_Card.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0009 - Add_Table_DeckType.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0010 - Add_Table_Deck.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0011 - Add_Table_DeckCard.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0012 - Add_Table_Banlist.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0013 - Add_Table_BanlistCards.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0014 - Add_Table_Archetype.sql" />
+	  <None Remove="Scripts\Migrations\2023\2023-08-07 - 0.0.0.1\Script0015 - Add_Table_ArchetypeCard.sql" />
+	  <None Remove="Scripts\PostDeployment\2023\2023-08-07 - 0.0.0.1\Script0001 - Add_Default_Data.sql" />
+	</ItemGroup>
+
+</Project>
