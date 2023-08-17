@@ -103,8 +103,14 @@
                             <StackPanel>
                                 <iconPacks:PackIconControl Kind="{Binding Icon.Kind}"  HorizontalAlignment="Center"
                                                            Width="50"
-                                                           Height="50"/>
-                                <TextBlock Text="{Binding Count}" FontSize="50"/>
+                                                           Height="50" />
+                                <iconPacks:PackIconVaadinIcons Kind="Spinner"  
+                                                               Visibility="{Binding Count.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                               HorizontalAlignment="Center"
+                                                               Margin="0,20,0,0"
+                                                               Width="45"
+                                                               Height="45" Spin="True" SpinDuration="1"/>
+                                <TextBlock Text="{Binding Count.Value}" FontSize="50" Visibility="{Binding Count.IsLoaded, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </StackPanel>
                         </controls:Tile>
                     </Border>

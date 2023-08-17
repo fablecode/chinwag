@@ -17,4 +17,8 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Application\Chinwag.Application\Chinwag.Application.csproj" />
+  </ItemGroup>
+
 </Project>

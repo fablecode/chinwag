@@ -25,6 +25,10 @@ using System.Configuration;
 using Serilog.Formatting.Elasticsearch;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Data.SqlClient;
+using DryIoc;
+using MediatR;
+using System.Net.NetworkInformation;
+using MediatR.Pipeline;
 
 namespace Chinwag
 {
