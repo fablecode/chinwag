@@ -1,9 +1,9 @@
-﻿using Chinwag.Application.Queries.DeckCount;
+﻿using Chinwag.Application.Queries.ArchetypeCount;
+using Chinwag.Application.Queries.BanlistCount;
+using Chinwag.Application.Queries.CardCount;
+using Chinwag.Application.Queries.DeckCount;
 using MediatR;
 using Prism.Ioc;
-using System.ComponentModel;
-using System.Net.NetworkInformation;
-using System.Xml.Linq;
 
 namespace Chinwag.Application
 {
@@ -21,6 +21,9 @@ namespace Chinwag.Application
             containerRegistry.Register<IMediator, Mediator>();
 
             containerRegistry.Register<IRequestHandler<DeckCountQuery, int>, DeckCountQueryHandler>();
+            containerRegistry.Register<IRequestHandler<BanlistCountQuery, int>, BanlistCountQueryHandler>();
+            containerRegistry.Register<IRequestHandler<CardCountQuery, int>, CardCountQueryHandler>();
+            containerRegistry.Register<IRequestHandler<ArchetypeCountQuery, int>, ArchetypeCountQueryHandler>();
 
             return containerRegistry;
         }

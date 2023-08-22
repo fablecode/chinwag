@@ -11,8 +11,8 @@ public sealed class DeckCountQueryHandler : IRequestHandler<DeckCountQuery, int>
     {
         _deckRepository = deckRepository;
     }
-    public async Task<int> Handle(DeckCountQuery request, CancellationToken cancellationToken)
+    public Task<int> Handle(DeckCountQuery request, CancellationToken cancellationToken)
     {
-        return await _deckRepository.Count();
+        return _deckRepository.Count();
     }
 }

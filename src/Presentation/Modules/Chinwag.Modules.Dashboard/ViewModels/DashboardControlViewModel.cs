@@ -6,6 +6,9 @@ using System;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
+using Chinwag.Application.Queries.ArchetypeCount;
+using Chinwag.Application.Queries.BanlistCount;
+using Chinwag.Application.Queries.CardCount;
 
 namespace Chinwag.Modules.Dashboard.ViewModels;
 
@@ -20,10 +23,8 @@ public class DashboardControlViewModel : BindableBase
         set => SetProperty(ref _glanceItems, value);
     }
 
-    private async Task<ObservableCollection<GlanceItem>> RetrieveGlanceItems()
+    private void RetrieveGlanceItems()
     {
-        var items = new ObservableCollection<GlanceItem>();
-
         _glanceItems.Add(new GlanceItem("Deck", "Decks")
         {
             Background = "Teal",
@@ -31,45 +32,57 @@ public class DashboardControlViewModel : BindableBase
             Count = new LazyProperty<int>( DeckCountSend, default)
         });
 
-
-        return items;
-
-        async Task<int> DeckCountSend(CancellationToken cancellationToken)
+        _glanceItems.Add(new GlanceItem("Banlist", "Banlists")
         {
-            return await _mediator.Send(new DeckCountQuery(), cancellationToken);
-        }
+            Background = "Chocolate",
+            Icon = new PackIconUnicons() { Kind = PackIconUniconsKind.FileBlockAlt },
+            Count = new LazyProperty<int>( BanlistCountSend, default)
+        });
+
+        _glanceItems.Add(new GlanceItem("Card", "Cards")
+        {
+            Background = "Green",
+            Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.CardsPlayingOutline },
+            Count = new LazyProperty<int>( CardCountSend, default)
+        });
+
+        _glanceItems.Add(new GlanceItem("Archetype", "Archetypes")
+        {
+            Background = "#FF6B56A7",
+            Icon = new PackIconCodicons() { Kind = PackIconCodiconsKind.Tag },
+            Count = new LazyProperty<int>( ArchetypeCountSend, default)
+        });
     }
+
+    private Task<int> BanlistCountSend(CancellationToken cancellationToken)
+    {
+        return CountSend<BanlistCountQuery>(cancellationToken);
+    }
+
+    private Task<int> DeckCountSend(CancellationToken cancellationToken)
+    {
+        return CountSend<DeckCountQuery>(cancellationToken);
+    }
+    private Task<int> CardCountSend(CancellationToken cancellationToken)
+    {
+        return CountSend<CardCountQuery>(cancellationToken);
+    }
+    private Task<int> ArchetypeCountSend(CancellationToken cancellationToken)
+    {
+        return CountSend<ArchetypeCountQuery>(cancellationToken);
+    }
+
+    private Task<int> CountSend<T>(CancellationToken cancellationToken) where T : IRequest<int>, new()
+    {
+        return _mediator.Send(new T(), cancellationToken);
+    }
+
 
     public DashboardControlViewModel(IMediator mediator)
     {
         _mediator = mediator;
 
-        _ = RetrieveGlanceItems();
-
-        //_glanceItems.Add(new GlanceItem("Deck", "Decks")
-        //{
-        //    Background = "Teal",
-        //    Icon = new PackIconSimpleIcons() { Kind = PackIconSimpleIconsKind.BookStack },
-        //    Count = 43
-        //});
-        //_glanceItems.Add(new GlanceItem("Banlist", "Banlists")
-        //{
-        //    Background = "Chocolate",
-        //    Icon = new PackIconUnicons() { Kind = PackIconUniconsKind.FileBlockAlt },
-        //    Count = 67
-        //});
-        //_glanceItems.Add(new GlanceItem("Card", "Cards")
-        //{
-        //    Background = "Green",
-        //    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.CardsPlayingOutline },
-        //    Count = 11897
-        //});
-        //_glanceItems.Add(new GlanceItem("Archetype", "Archetypes")
-        //{
-        //    Background = "#FF6B56A7",
-        //    Icon = new PackIconCodicons() { Kind = PackIconCodiconsKind.Tag },
-        //    Count = 117
-        //});
+        RetrieveGlanceItems();
     }
 }
 

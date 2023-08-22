@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Queries\ArchetypeCount\" />
+    <Folder Include="Queries\CardCount\" />
     <Folder Include="Queries\DeckCount\" />
   </ItemGroup>
 

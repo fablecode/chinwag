@@ -5,19 +5,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chinwag.Infrastructure.Repository;
 
-public class DeckRepository : IDeckRepository
+public class BanlistRepository : IBanlistRepository
 {
     private readonly ChinwagDbContext _dbContext;
 
-    public DeckRepository(ChinwagDbContext dbContext)
+    public BanlistRepository(ChinwagDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
     public Task<int> Count()
     {
-        IQueryable<Deck> decks = _dbContext.Decks;
+        IQueryable<Banlist> banlists = _dbContext.Banlists;
 
-        return decks.CountAsync();
+        return banlists.CountAsync();
     }
 }

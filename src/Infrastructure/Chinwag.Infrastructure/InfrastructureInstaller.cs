@@ -2,8 +2,6 @@
 using Chinwag.Infrastructure.Database;
 using Chinwag.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.Extensions.DependencyInjection;
 using Prism.Ioc;
 
 namespace Chinwag.Infrastructure
@@ -31,6 +29,9 @@ namespace Chinwag.Infrastructure
         public static IContainerRegistry AddRepositories(this IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IDeckRepository, DeckRepository>();
+            containerRegistry.Register<IBanlistRepository, BanlistRepository>();
+            containerRegistry.Register<ICardRepository, CardRepository>();
+            containerRegistry.Register<IArchetypeRepository, ArchetypeRepository>();
 
             return containerRegistry;
         }

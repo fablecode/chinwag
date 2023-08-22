@@ -5,19 +5,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chinwag.Infrastructure.Repository;
 
-public class DeckRepository : IDeckRepository
+public class ArchetypeRepository : IArchetypeRepository
 {
     private readonly ChinwagDbContext _dbContext;
 
-    public DeckRepository(ChinwagDbContext dbContext)
+    public ArchetypeRepository(ChinwagDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
     public Task<int> Count()
     {
-        IQueryable<Deck> decks = _dbContext.Decks;
+        IQueryable<Archetype> archetypes = _dbContext.Archetypes;
 
-        return decks.CountAsync();
+        return archetypes.CountAsync();
     }
 }
